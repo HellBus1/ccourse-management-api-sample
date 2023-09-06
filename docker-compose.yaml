@@ -1,0 +1,15 @@
+version: '3'
+services:
+  # define image for dbms service container
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=12345
+    volumes:
+      - postgres:/var/lin/postgresql/data
+    ports:
+      - '5435:5435'
+volumes:
+  postgres:
